@@ -32,27 +32,16 @@ class PersonTest {
 
     @Test
     void setPhoneNumber_WithInvalidData() {
-        String expected = "555-555-5555";
-        p.setPhoneNumber(expected);
 
-        String falseNumber = "5-55-555";
-        p.setPhoneNumber(falseNumber);
-
-        String actual = p.getPhoneNumber();
-
-        assertEquals(expected, actual);
+        assertThrows(IllegalArgumentException.class, () -> {
+            p.setPhoneNumber("5-55-555");
+        });
     }
 
     @Test
     void setPhoneNumber_WithNullData() {
-        String expected = "555-555-5555";
-        p.setPhoneNumber(expected);
-
-        String falseNumber = null;
-        p.setPhoneNumber(falseNumber);
-
-        String actual = p.getPhoneNumber();
-
-        assertEquals(expected, actual);
+        assertThrows(IllegalArgumentException.class, () -> {
+            p.setPhoneNumber(null);
+        });
     }
 }

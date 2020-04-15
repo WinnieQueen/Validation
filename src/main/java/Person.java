@@ -8,6 +8,8 @@ public class Person {
     public void setPhoneNumber(String phoneNumber) {
         if (phoneNumber != null && phoneNumber.matches("^(\\d{3})-(\\d{3})-(\\d{4})$")) {
             this.phoneNumber = phoneNumber;
+        } else {
+            throw new IllegalArgumentException("Number was null or invalid format. Must follow ###-###-#### format.");
         }
     }
 }
