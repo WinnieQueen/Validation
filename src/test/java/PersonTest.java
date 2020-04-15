@@ -42,4 +42,17 @@ class PersonTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    void setPhoneNumber_WithNullData() {
+        String expected = "555-555-5555";
+        p.setPhoneNumber(expected);
+
+        String falseNumber = null;
+        p.setPhoneNumber(falseNumber);
+
+        String actual = p.getPhoneNumber();
+
+        assertEquals(expected, actual);
+    }
 }
