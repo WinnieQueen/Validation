@@ -1,8 +1,17 @@
 public class Person {
     private String phoneNumber = "000-000-0000";
+    private String name = "John Doe";
 
     public String getPhoneNumber() {
         return phoneNumber;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public void setPhoneNumber(String phoneNumber) {
